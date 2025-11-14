@@ -51,4 +51,4 @@ The code in this repository is licensed under the [MIT License](LICENSE). The co
 
 ## Acknowledgments
 
-A special thank you to **Reinaldo Chaves** for creating and sharing the excellent presentation and tipsheet that form the basis of this website. Thanks also to the other panelists and GIJC for facilitating this important discussion.
+Thanks also to the other panelists and GIJC for facilitating this important discussion.
