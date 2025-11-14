@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Tools for Environmental Investigations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #005f73;
+            --secondary-color: #0a9396;
+            --background-color: #f4f4f4;
+            --dark-color: #212529;
+            --light-color: #ffffff;
+            --text-color: #333;
+            --border-radius: 8px;
+            --shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 4rem 2rem;
+            text-align: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 5px solid var(--primary-color);
+        }
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 1rem auto 0;
+            font-weight: 300;
+        }
+        .section {
+            background: var(--light-color);
+            margin: 30px 0;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+        }
+        .panelists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 2rem;
+        }
+        .panelist-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .panelist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        .panelist-card h4 { margin: 0 0 5px 0; font-family: 'Poppins', sans-serif; color: var(--dark-color); }
+        .panelist-card p { margin: 0; font-size: 0.9em; color: #6c757d; }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .grid-container { grid-template-columns: repeat(2, 1fr); }
+            .grid-container.three-cols { grid-template-columns: repeat(3, 1fr); }
+        }
+        .card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: column;
+        }
+        .card h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 0;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        .card h3 svg {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--light-color);
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            margin: 5px;
+            border: 2px solid transparent;
+        }
+        .btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        .btn-outline:hover {
+            background: var(--secondary-color);
+            color: var(--light-color);
+        }
+        .tool-category { margin-top: 1.5rem; }
+        .tool-category h4 { font-family: 'Poppins', sans-serif; color: var(--dark-color); border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .tool-category ul { list-style: none; padding: 0; }
+        .tool-category li { margin-bottom: 8px; }
+        .tool-category strong { color: var(--primary-color); }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            background: var(--dark-color);
+            color: #adb5bd;
+        }
+        footer a { color: var(--secondary-color); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Digital Tools for Environmental Investigations</h1>
+        <p>A practical guide based on the Global Investigative Journalism Conference 2025 panel, featuring materials by Reinaldo Chaves.</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>About the Panel: Uncovering Environmental Stories</h2>
+            <p>Environmental crimes often involve complex networks spanning remote locations and multiple jurisdictions, making them difficult to investigate. This session from GIJC25 demonstrates how journalists can use cutting-edge digital tools—including AI-powered satellite analysis, geospatial mapping, and data linking—to expose hidden environmental destruction and hold power to account.</p>
+            <div class="panelists-grid">
+                <div class="panelist-card">
+                    <h4>Reinaldo Chaves</h4>
+                    <p>Project Coordinator at Abraji (Brazilian Association of Investigative Journalism), specializing in data-driven environmental investigations.</p>
+                </div>
+                <div class="panelist-card">
+                    <h4>Alexa Vélez Zuazo</h4>
+                    <p>Managing Editor at Mongabay, a leading platform for environmental science and conservation news.</p>
+                </div>
+                <div class="panelist-card">
+                    <h4>Madeleine Ngeunga</h4>
+                    <p>Africa Editor for the Pulitzer Center's Rainforest Investigations Network, focusing on cross-border reporting.</p>
+                </div>
+                <div class="panelist-card">
+                    <h4>Koh Jun Lin (Moderator)</h4>
+                    <p>Deputy News Editor at Malaysiakini, an independent Malaysian news outlet known for its investigative journalism.</p>
+                </div>
+            </div>
+            <div class="btn-container">
+                <a href="https://gijc2025.org/program/schedule/sessions/92244b3187fe5ebfb6458c0286128cfe/" class="btn btn-outline" target="_blank">View Official Panel Page</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Key Takeaways for Reporters</h2>
+            <div class="grid-container three-cols">
+                <div class="card"><h3>Data is Your Tip</h3><p>Alerts, disclosures, or changes in land and financial data are often the first sign of a story. Build systematic monitoring into your workflow instead of waiting for a source.</p></div>
+                <div class="card"><h3>Link People, Places, Money</h3><p>The story often lies in the network. The same actors appear across multiple infractions and supply chains. Visualizing these links creates a more compelling narrative.</p></div>
+                <div class="card"><h3>Make Data Human</h3><p>Beyond charts and maps, show the human impact. Who is being harmed? Who is benefiting? Connect the data to policy failures, environmental risks, and community consequences.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Five Core Investigative Techniques</h2>
+            <div class="grid-container">
+                <div class="card"><h3>1. Investigating Climate Adaptation</h3><p>Move beyond disaster reporting to focus on solutions and accountability. Use databases and public records to track climate adaptation funding, project implementation, and real-world outcomes, exposing failures and "maladaptation."</p></div>
+                <div class="card"><h3>2. Database Linking</h3><p>This is the foundation of the story. Connect disparate datasets—such as environmental violation records, corporate registries, land titles, and political donations—to uncover hidden relationships, conflicts of interest, and systemic issues.</p></div>
+                <div class="card"><h3>3. Network Analysis</h3><p>Once datasets are linked, use graph tools to visualize the connections between companies, owners, and infractions. This technique reveals patterns of repeat offenders, hidden ownership structures, and political influence that are invisible in spreadsheets.</p></div>
+                <div class="card"><h3>4. Story Building & Verification</h3><p>Transform data leads into a narrative. Use satellite imagery time-series, official documents, and Freedom of Information requests to verify findings. When possible, on-the-ground field reporting is crucial to confirm digital leads and add human context.</p></div>
+                <div class="card"><h3>5. Replicability & Adaptation</h3><p>The methods are universal, even if the specific databases differ. Adapt the workflow to your country by identifying key local data sources for land, corporate, and environmental records. The core principle of "spot change → trace actor → link finance" is globally transferable.</p></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Recommended Tools & Platforms</h2>
+            <p>A powerful workflow combines tools for each stage of the investigation, from lead generation to publication.</p>
+            <div class="grid-container">
+                <div class="card">
+                    <div class="tool-category">
+                        <h4>Satellite & Geospatial Analysis</h4>
+                        <ul>
+                            <li><strong>Planet Explorer:</strong> High-resolution, fresh satellite imagery to detect new clearings or infrastructure.</li>
+                            <li><strong>Sentinel Hub EO Browser:</strong> Free access to Sentinel & Landsat time-series imagery to track changes over time.</li>
+                            <li><strong>Google Earth Pro:</strong> Desktop tool for visualizing historical imagery and building story visuals.</li>
+                            <li><strong>QGIS:</strong> Open-source GIS for advanced mapping and spatial data analysis.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="tool-category">
+                        <h4>Data Platforms & Registries</h4>
+                        <ul>
+                            <li><strong>CruzaGrafos:</strong>  A Brazilian platform built by ABRAJI / Brasil.IO that allows users to visualise networks of companies, landowners, infractions and share-holders in Brazil.</li>
+                            <li><strong>Sayari Graph:</strong> Commercial platform for mapping corporate, trade, and supply-chain data.</li>
+                            <li><strong>Aleph (OCCRP):</strong> Free investigative data platform to cross-reference public records, leaks, and company registries.</li>
+                            <li><strong>Trase.earth:</strong> Maps global supply chains of agricultural commodities and their deforestation links.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="tool-category">
+                        <h4>Data Processing & Visualization</h4>
+                        <ul>
+                            <li><strong>OpenRefine:</strong> A free tool for cleaning and transforming messy datasets.</li>
+                            <li><strong>Pinpoint (Google):</strong> Uses AI to extract people, places, and organizations from large document sets.</li>
+                            <li><strong>Datawrapper:</strong> Quickly create charts, maps, and interactive visualizations for publication.</li>
+                            <li><strong>Pandas (Python library):</strong> For advanced data analysis, filtering, and aggregation.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="tool-category">
+                        <h4>Publication & Verification</h4>
+                        <ul>
+                            <li><strong>DocumentCloud:</strong> Upload, annotate, and share public documents for transparency.</li>
+                            <li><strong>CruzaGrafos:</strong> A Brazilian tool to visualize networks of companies, landowners, and infractions.</li>
+                            <li><strong>NotebookLM (Google):</strong> An AI assistant to help you research and summarize your own uploaded documents.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Source Materials & Full Guides</h2>
+            <p>Dive deeper with the comprehensive presentation and tipsheet prepared by Reinaldo Chaves. These resources provide detailed workflows, direct links to databases, and advanced technical advice.</p>
+            <div class="btn-container">
+                <a href="https://gamma.app/docs/Digital-Tools-for-Environmental-Investigations-Techniques-Data-an-ta1oufyrzmpjvc4" class="btn" target="_blank">View Full Presentation</a>
+                <a href="https://docs.google.com/document/d/16i3oXoS6DUJD_TM1yUO-TFGUVvVWT1SG0s6a1twVsis/edit?usp=sharing" class="btn" target="_blank">Access Complete Tipsheet</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>This website is an independent summary based on materials from the GIJC25 panel "How Digital Tools Help Uncover Environmental Stories."</p>
+        <p>
+            Source Links: 
+            <a href="https://gijc2025.org/program/schedule/sessions/92244b3187fe5ebfb6458c0286128cfe/" target="_blank">GIJC25 Panel</a> |
+            <a href="https://gamma.app/docs/Digital-Tools-for-Environmental-Investigations-Techniques-Data-an-ta1oufyrzmpjvc4" target="_blank">Presentation</a> |
+            <a href="https://docs.google.com/document/d/16i3oXoS6DUJD_TM1yUO-TFGUVvVWT1SG0s6a1twVsis/edit?usp=sharing" target="_blank">Tipsheet</a>
+        </p>
+    </footer>
+</body>
+</html>
