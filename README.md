@@ -1,6 +1,6 @@
 # Digital Tools for Environmental Investigations
 
-![Website Screenshot](https://i.imgur.com/your-screenshot-url.png)
+![Website Screenshot](screen1.png)
 *Note: Replace the image URL above with a real screenshot of your website for a better visual.*
 
 **Live Website: [https://reichaves.github.io/environmental-tools/](https://reichaves.github.io/environmental-tools/)**
